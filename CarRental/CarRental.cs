@@ -151,6 +151,11 @@ namespace CarRental
             return valid;
         }
 
+        private double KilometersToMiles(double kilometers)
+        {
+            return kilometers * 0.62;
+        }
+
         //Event Handlers below here --------------------------------------------------------------
 
         private void ExitButton_Click(object sender, EventArgs e)
