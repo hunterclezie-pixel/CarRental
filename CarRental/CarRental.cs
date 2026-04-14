@@ -13,6 +13,7 @@ namespace CarRental
         {
             InitializeComponent();
             SetDefaults();
+            ValidateCalculateButton();
         }
 
         //Custom Methids below here --------------------------------------------------------------
@@ -35,7 +36,6 @@ namespace CarRental
             EndingOdometerTextBox.BackColor = Color.LightYellow;
             NumberDaysTextBox.Text = "";
             NumberDaysTextBox.BackColor = Color.LightYellow;
-            CalculateButton.Enabled = false;
             SummaryButton.Enabled = false;
             MilesRadioButton.Checked = true;
         }
@@ -43,6 +43,7 @@ namespace CarRental
         private bool ValidateFields()
         {
             bool valid = true;
+            string message = "";
 
             if (CustomerNameTextBox.Text != "")
             {
@@ -51,6 +52,7 @@ namespace CarRental
             else
             {
                 CustomerNameTextBox.BackColor = Color.LightYellow;
+                message += "Please enter a valid customer name.\n";
                 valid = false;
             }
 
@@ -61,6 +63,7 @@ namespace CarRental
             else
             {
                 AddressTextBox.BackColor = Color.LightYellow;
+                message += "Please enter a valid address.\n";
                 valid = false;
             }
 
@@ -71,6 +74,7 @@ namespace CarRental
             else
             {
                 CityTextBox.BackColor = Color.LightYellow;
+                message += "Please enter a valid city.\n";
                 valid = false;
             }
 
@@ -81,6 +85,7 @@ namespace CarRental
             else
             {
                 StateTextBox.BackColor = Color.LightYellow;
+                message += "Please enter a valid state.\n";
                 valid = false;
             }
 
@@ -91,24 +96,26 @@ namespace CarRental
             else
             {
                 ZipCodeTextBox.BackColor = Color.LightYellow;
+                message += "Please enter a valid zip code.\n";
                 valid = false;
             }
 
-            try 
+            try
             {
                 if (int.Parse(BeginningOdometerTextBox.Text) >= 0 && int.Parse(BeginningOdometerTextBox.Text) <= (int.Parse(EndingOdometerTextBox.Text)))
                 {
                     BeginningOdometerTextBox.BackColor = Color.White;
                 }
-                else 
+                else
                 {
                     BeginningOdometerTextBox.BackColor = Color.LightYellow;
                     valid = false;
                 }
-            } 
+            }
             catch (Exception)
             {
                 BeginningOdometerTextBox.BackColor = Color.LightYellow;
+                message += "Please enter a valid beginning odometer reading that is less than or equal to the ending odometer reading.\n";
                 valid = false;
             }
 
@@ -127,6 +134,7 @@ namespace CarRental
             catch (Exception)
             {
                 EndingOdometerTextBox.BackColor = Color.LightYellow;
+                message += "Please enter a valid ending odometer reading.\n";
                 valid = false;
             }
 
@@ -145,10 +153,22 @@ namespace CarRental
             catch (Exception)
             {
                 EndingOdometerTextBox.BackColor = Color.LightYellow;
+                message += "Please enter a valid number of days (0-45).\n";
                 valid = false;
             }
 
+            if (message != "")
+            {
+                valid = false;
+                MessageBox.Show(message);
+            }
+
             return valid;
+        }
+
+        void ValidateCalculateButton()
+        {
+            
         }
 
         private double KilometersToMiles(double kilometers)
@@ -174,6 +194,11 @@ namespace CarRental
         private void ClearButton_Click(object sender, EventArgs e)
         {
             SetDefaults();
+        }
+
+        private void CalculateButton_Click(object sender, EventArgs e)
+        {
+            ValidateFields();
         }
     }
 }
