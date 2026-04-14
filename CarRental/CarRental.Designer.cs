@@ -36,14 +36,14 @@
             BeginningOdometerLabel = new Label();
             EndingOdometerlabel = new Label();
             NumberDaysLabel = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
+            CustomerNameTextBox = new TextBox();
+            AddressTextBox = new TextBox();
+            CityTextBox = new TextBox();
+            StateTextBox = new TextBox();
+            ZipCodeTextBox = new TextBox();
+            BeginningOdometerTextBox = new TextBox();
+            EndingOdometerTextBox = new TextBox();
+            NumberDaysTextBox = new TextBox();
             CustomerInfoGroupBox = new GroupBox();
             DistanceConversionGroupBox = new GroupBox();
             MilesRadioButton = new RadioButton();
@@ -61,11 +61,11 @@
             DayChargeLabel = new Label();
             MinusDiscountLabel = new Label();
             YouOweLabel = new Label();
-            textBox9 = new TextBox();
-            textBox10 = new TextBox();
-            textBox11 = new TextBox();
-            textBox12 = new TextBox();
-            textBox13 = new TextBox();
+            DistanceDrivenTextBox = new TextBox();
+            MilageChargeTextBox = new TextBox();
+            DayChargeTextBox = new TextBox();
+            MinusDiscountTextBox = new TextBox();
+            YouOweTextBox = new TextBox();
             CustomerInfoGroupBox.SuspendLayout();
             DistanceConversionGroupBox.SuspendLayout();
             DiscountGroupBox.SuspendLayout();
@@ -144,80 +144,80 @@
             NumberDaysLabel.TabIndex = 7;
             NumberDaysLabel.Text = "Number of Days";
             // 
-            // textBox1
+            // CustomerNameTextBox
             // 
-            textBox1.Location = new Point(248, 29);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(168, 27);
-            textBox1.TabIndex = 8;
+            CustomerNameTextBox.Location = new Point(248, 29);
+            CustomerNameTextBox.Name = "CustomerNameTextBox";
+            CustomerNameTextBox.Size = new Size(168, 27);
+            CustomerNameTextBox.TabIndex = 8;
             // 
-            // textBox2
+            // AddressTextBox
             // 
-            textBox2.Location = new Point(248, 62);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(168, 27);
-            textBox2.TabIndex = 9;
+            AddressTextBox.Location = new Point(248, 62);
+            AddressTextBox.Name = "AddressTextBox";
+            AddressTextBox.Size = new Size(168, 27);
+            AddressTextBox.TabIndex = 9;
             // 
-            // textBox3
+            // CityTextBox
             // 
-            textBox3.Location = new Point(248, 93);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(168, 27);
-            textBox3.TabIndex = 10;
+            CityTextBox.Location = new Point(248, 93);
+            CityTextBox.Name = "CityTextBox";
+            CityTextBox.Size = new Size(168, 27);
+            CityTextBox.TabIndex = 10;
             // 
-            // textBox4
+            // StateTextBox
             // 
-            textBox4.Location = new Point(248, 129);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(168, 27);
-            textBox4.TabIndex = 11;
+            StateTextBox.Location = new Point(248, 129);
+            StateTextBox.Name = "StateTextBox";
+            StateTextBox.Size = new Size(168, 27);
+            StateTextBox.TabIndex = 11;
             // 
-            // textBox5
+            // ZipCodeTextBox
             // 
-            textBox5.Location = new Point(248, 162);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(168, 27);
-            textBox5.TabIndex = 12;
+            ZipCodeTextBox.Location = new Point(248, 162);
+            ZipCodeTextBox.Name = "ZipCodeTextBox";
+            ZipCodeTextBox.Size = new Size(168, 27);
+            ZipCodeTextBox.TabIndex = 12;
             // 
-            // textBox6
+            // BeginningOdometerTextBox
             // 
-            textBox6.Location = new Point(248, 195);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(168, 27);
-            textBox6.TabIndex = 13;
+            BeginningOdometerTextBox.Location = new Point(248, 195);
+            BeginningOdometerTextBox.Name = "BeginningOdometerTextBox";
+            BeginningOdometerTextBox.Size = new Size(168, 27);
+            BeginningOdometerTextBox.TabIndex = 13;
             // 
-            // textBox7
+            // EndingOdometerTextBox
             // 
-            textBox7.Location = new Point(248, 228);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(168, 27);
-            textBox7.TabIndex = 14;
+            EndingOdometerTextBox.Location = new Point(248, 228);
+            EndingOdometerTextBox.Name = "EndingOdometerTextBox";
+            EndingOdometerTextBox.Size = new Size(168, 27);
+            EndingOdometerTextBox.TabIndex = 14;
             // 
-            // textBox8
+            // NumberDaysTextBox
             // 
-            textBox8.Location = new Point(248, 262);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(168, 27);
-            textBox8.TabIndex = 15;
+            NumberDaysTextBox.Location = new Point(248, 262);
+            NumberDaysTextBox.Name = "NumberDaysTextBox";
+            NumberDaysTextBox.Size = new Size(168, 27);
+            NumberDaysTextBox.TabIndex = 15;
             // 
             // CustomerInfoGroupBox
             // 
             CustomerInfoGroupBox.Controls.Add(BeginningOdometerLabel);
-            CustomerInfoGroupBox.Controls.Add(textBox8);
+            CustomerInfoGroupBox.Controls.Add(NumberDaysTextBox);
             CustomerInfoGroupBox.Controls.Add(CustomerNameLabel);
-            CustomerInfoGroupBox.Controls.Add(textBox7);
+            CustomerInfoGroupBox.Controls.Add(EndingOdometerTextBox);
             CustomerInfoGroupBox.Controls.Add(AddressLabel);
-            CustomerInfoGroupBox.Controls.Add(textBox6);
+            CustomerInfoGroupBox.Controls.Add(BeginningOdometerTextBox);
             CustomerInfoGroupBox.Controls.Add(CityLabel);
-            CustomerInfoGroupBox.Controls.Add(textBox5);
+            CustomerInfoGroupBox.Controls.Add(ZipCodeTextBox);
             CustomerInfoGroupBox.Controls.Add(StateLabel);
-            CustomerInfoGroupBox.Controls.Add(textBox4);
+            CustomerInfoGroupBox.Controls.Add(StateTextBox);
             CustomerInfoGroupBox.Controls.Add(ZipCodeLabel);
-            CustomerInfoGroupBox.Controls.Add(textBox3);
+            CustomerInfoGroupBox.Controls.Add(CityTextBox);
             CustomerInfoGroupBox.Controls.Add(EndingOdometerlabel);
-            CustomerInfoGroupBox.Controls.Add(textBox2);
+            CustomerInfoGroupBox.Controls.Add(AddressTextBox);
             CustomerInfoGroupBox.Controls.Add(NumberDaysLabel);
-            CustomerInfoGroupBox.Controls.Add(textBox1);
+            CustomerInfoGroupBox.Controls.Add(CustomerNameTextBox);
             CustomerInfoGroupBox.Location = new Point(12, 12);
             CustomerInfoGroupBox.Name = "CustomerInfoGroupBox";
             CustomerInfoGroupBox.Size = new Size(422, 300);
@@ -307,11 +307,11 @@
             // 
             // CustomerSummaryGroupBox
             // 
-            CustomerSummaryGroupBox.Controls.Add(textBox13);
-            CustomerSummaryGroupBox.Controls.Add(textBox12);
-            CustomerSummaryGroupBox.Controls.Add(textBox11);
-            CustomerSummaryGroupBox.Controls.Add(textBox10);
-            CustomerSummaryGroupBox.Controls.Add(textBox9);
+            CustomerSummaryGroupBox.Controls.Add(YouOweTextBox);
+            CustomerSummaryGroupBox.Controls.Add(MinusDiscountTextBox);
+            CustomerSummaryGroupBox.Controls.Add(DayChargeTextBox);
+            CustomerSummaryGroupBox.Controls.Add(MilageChargeTextBox);
+            CustomerSummaryGroupBox.Controls.Add(DistanceDrivenTextBox);
             CustomerSummaryGroupBox.Controls.Add(YouOweLabel);
             CustomerSummaryGroupBox.Controls.Add(MinusDiscountLabel);
             CustomerSummaryGroupBox.Controls.Add(DayChargeLabel);
@@ -389,40 +389,40 @@
             YouOweLabel.TabIndex = 4;
             YouOweLabel.Text = "You Owe";
             // 
-            // textBox9
+            // DistanceDrivenTextBox
             // 
-            textBox9.Location = new Point(180, 29);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(162, 27);
-            textBox9.TabIndex = 5;
+            DistanceDrivenTextBox.Location = new Point(180, 29);
+            DistanceDrivenTextBox.Name = "DistanceDrivenTextBox";
+            DistanceDrivenTextBox.Size = new Size(162, 27);
+            DistanceDrivenTextBox.TabIndex = 5;
             // 
-            // textBox10
+            // MilageChargeTextBox
             // 
-            textBox10.Location = new Point(180, 62);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(162, 27);
-            textBox10.TabIndex = 6;
+            MilageChargeTextBox.Location = new Point(180, 62);
+            MilageChargeTextBox.Name = "MilageChargeTextBox";
+            MilageChargeTextBox.Size = new Size(162, 27);
+            MilageChargeTextBox.TabIndex = 6;
             // 
-            // textBox11
+            // DayChargeTextBox
             // 
-            textBox11.Location = new Point(180, 93);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(162, 27);
-            textBox11.TabIndex = 7;
+            DayChargeTextBox.Location = new Point(180, 93);
+            DayChargeTextBox.Name = "DayChargeTextBox";
+            DayChargeTextBox.Size = new Size(162, 27);
+            DayChargeTextBox.TabIndex = 7;
             // 
-            // textBox12
+            // MinusDiscountTextBox
             // 
-            textBox12.Location = new Point(180, 126);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(162, 27);
-            textBox12.TabIndex = 8;
+            MinusDiscountTextBox.Location = new Point(180, 126);
+            MinusDiscountTextBox.Name = "MinusDiscountTextBox";
+            MinusDiscountTextBox.Size = new Size(162, 27);
+            MinusDiscountTextBox.TabIndex = 8;
             // 
-            // textBox13
+            // YouOweTextBox
             // 
-            textBox13.Location = new Point(180, 158);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(162, 27);
-            textBox13.TabIndex = 9;
+            YouOweTextBox.Location = new Point(180, 158);
+            YouOweTextBox.Name = "YouOweTextBox";
+            YouOweTextBox.Size = new Size(162, 27);
+            YouOweTextBox.TabIndex = 9;
             // 
             // CarRental
             // 
@@ -460,14 +460,14 @@
         private Label BeginningOdometerLabel;
         private Label EndingOdometerlabel;
         private Label NumberDaysLabel;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
-        private TextBox textBox8;
+        private TextBox CustomerNameTextBox;
+        private TextBox AddressTextBox;
+        private TextBox CityTextBox;
+        private TextBox StateTextBox;
+        private TextBox ZipCodeTextBox;
+        private TextBox BeginningOdometerTextBox;
+        private TextBox EndingOdometerTextBox;
+        private TextBox NumberDaysTextBox;
         private GroupBox CustomerInfoGroupBox;
         private GroupBox DistanceConversionGroupBox;
         private RadioButton KilometersRadioButton;
@@ -484,11 +484,11 @@
         private Label DayChargeLabel;
         private Label MilageChargeLabel;
         private Label DistanceDrivenLabel;
-        private TextBox textBox13;
-        private TextBox textBox12;
-        private TextBox textBox11;
-        private TextBox textBox10;
-        private TextBox textBox9;
+        private TextBox YouOweTextBox;
+        private TextBox MinusDiscountTextBox;
+        private TextBox DayChargeTextBox;
+        private TextBox MilageChargeTextBox;
+        private TextBox DistanceDrivenTextBox;
         private Label YouOweLabel;
     }
 }
