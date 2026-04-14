@@ -12,10 +12,33 @@ namespace CarRental
         public CarRental()
         {
             InitializeComponent();
+            SetDefaults();
         }
 
         //Custom Methids below here --------------------------------------------------------------
 
+        void SetDefaults()
+        {
+            CustomerNameTextBox.Text = "";
+            CustomerNameTextBox.BackColor = Color.LightYellow;
+            AddressTextBox.Text = "";
+            AddressTextBox.BackColor = Color.LightYellow;
+            CityTextBox.Text = "";
+            CityTextBox.BackColor = Color.LightYellow;
+            StateTextBox.Text = "";
+            StateTextBox.BackColor = Color.LightYellow;
+            ZipCodeTextBox.Text = "";
+            ZipCodeTextBox.BackColor = Color.LightYellow;
+            BeginningOdometerTextBox.Text = "";
+            BeginningOdometerTextBox.BackColor = Color.LightYellow;
+            EndingOdometerTextBox.Text = "";
+            EndingOdometerTextBox.BackColor = Color.LightYellow;
+            NumberDaysTextBox.Text = "";
+            NumberDaysTextBox.BackColor = Color.LightYellow;
+            CalculateButton.Enabled = false;
+            SummaryButton.Enabled = false;
+            MilesRadioButton.Checked = true;
+        }
 
         //Event Handlers below here --------------------------------------------------------------
 
@@ -30,6 +53,11 @@ namespace CarRental
             {
                 return;
             }
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            SetDefaults();
         }
     }
 }

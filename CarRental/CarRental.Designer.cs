@@ -53,7 +53,7 @@
             AAAMemberCheckBox = new CheckBox();
             CalculateButton = new Button();
             ClearButton = new Button();
-            SumarryButton = new Button();
+            SummaryButton = new Button();
             ExitButton = new Button();
             CustomerSummaryGroupBox = new GroupBox();
             YouOweTextBox = new TextBox();
@@ -306,15 +306,16 @@
             ClearButton.TabIndex = 20;
             ClearButton.Text = "Clear";
             ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += ClearButton_Click;
             // 
-            // SumarryButton
+            // SummaryButton
             // 
-            SumarryButton.Location = new Point(397, 471);
-            SumarryButton.Name = "SumarryButton";
-            SumarryButton.Size = new Size(128, 42);
-            SumarryButton.TabIndex = 21;
-            SumarryButton.Text = "Summary";
-            SumarryButton.UseVisualStyleBackColor = true;
+            SummaryButton.Location = new Point(397, 471);
+            SummaryButton.Name = "SummaryButton";
+            SummaryButton.Size = new Size(128, 42);
+            SummaryButton.TabIndex = 21;
+            SummaryButton.Text = "Summary";
+            SummaryButton.UseVisualStyleBackColor = true;
             // 
             // ExitButton
             // 
@@ -432,7 +433,7 @@
             ClientSize = new Size(800, 534);
             Controls.Add(CustomerSummaryGroupBox);
             Controls.Add(ExitButton);
-            Controls.Add(SumarryButton);
+            Controls.Add(SummaryButton);
             Controls.Add(ClearButton);
             Controls.Add(CalculateButton);
             Controls.Add(DiscountGroupBox);
@@ -476,7 +477,7 @@
         private GroupBox DiscountGroupBox;
         private Button CalculateButton;
         private Button ClearButton;
-        private Button SumarryButton;
+        private Button SummaryButton;
         private Button ExitButton;
         private GroupBox CustomerSummaryGroupBox;
         private CheckBox SeniorCitizenCheckBox;
