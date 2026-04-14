@@ -46,26 +46,26 @@
             NumberDaysTextBox = new TextBox();
             CustomerInfoGroupBox = new GroupBox();
             DistanceConversionGroupBox = new GroupBox();
-            MilesRadioButton = new RadioButton();
             KilometersRadioButton = new RadioButton();
+            MilesRadioButton = new RadioButton();
             DiscountGroupBox = new GroupBox();
+            SeniorCitizenCheckBox = new CheckBox();
+            AAAMemberCheckBox = new CheckBox();
             CalculateButton = new Button();
             ClearButton = new Button();
             SumarryButton = new Button();
-            SubmitButton = new Button();
+            ExitButton = new Button();
             CustomerSummaryGroupBox = new GroupBox();
-            AAAMemberCheckBox = new CheckBox();
-            SeniorCitizenCheckBox = new CheckBox();
-            DistanceDrivenLabel = new Label();
-            MilageChargeLabel = new Label();
-            DayChargeLabel = new Label();
-            MinusDiscountLabel = new Label();
-            YouOweLabel = new Label();
-            DistanceDrivenTextBox = new TextBox();
-            MilageChargeTextBox = new TextBox();
-            DayChargeTextBox = new TextBox();
-            MinusDiscountTextBox = new TextBox();
             YouOweTextBox = new TextBox();
+            MinusDiscountTextBox = new TextBox();
+            DayChargeTextBox = new TextBox();
+            MilageChargeTextBox = new TextBox();
+            DistanceDrivenTextBox = new TextBox();
+            YouOweLabel = new Label();
+            MinusDiscountLabel = new Label();
+            DayChargeLabel = new Label();
+            MilageChargeLabel = new Label();
+            DistanceDrivenLabel = new Label();
             CustomerInfoGroupBox.SuspendLayout();
             DistanceConversionGroupBox.SuspendLayout();
             DiscountGroupBox.SuspendLayout();
@@ -236,17 +236,6 @@
             DistanceConversionGroupBox.TabStop = false;
             DistanceConversionGroupBox.Text = "Is It In Kilometers Or Miles?";
             // 
-            // MilesRadioButton
-            // 
-            MilesRadioButton.AutoSize = true;
-            MilesRadioButton.Location = new Point(6, 36);
-            MilesRadioButton.Name = "MilesRadioButton";
-            MilesRadioButton.Size = new Size(65, 24);
-            MilesRadioButton.TabIndex = 0;
-            MilesRadioButton.TabStop = true;
-            MilesRadioButton.Text = "Miles";
-            MilesRadioButton.UseVisualStyleBackColor = true;
-            // 
             // KilometersRadioButton
             // 
             KilometersRadioButton.AutoSize = true;
@@ -258,6 +247,17 @@
             KilometersRadioButton.Text = "Kilometers";
             KilometersRadioButton.UseVisualStyleBackColor = true;
             // 
+            // MilesRadioButton
+            // 
+            MilesRadioButton.AutoSize = true;
+            MilesRadioButton.Location = new Point(6, 36);
+            MilesRadioButton.Name = "MilesRadioButton";
+            MilesRadioButton.Size = new Size(65, 24);
+            MilesRadioButton.TabIndex = 0;
+            MilesRadioButton.TabStop = true;
+            MilesRadioButton.Text = "Miles";
+            MilesRadioButton.UseVisualStyleBackColor = true;
+            // 
             // DiscountGroupBox
             // 
             DiscountGroupBox.Controls.Add(SeniorCitizenCheckBox);
@@ -268,6 +268,26 @@
             DiscountGroupBox.TabIndex = 18;
             DiscountGroupBox.TabStop = false;
             DiscountGroupBox.Text = "Enter Any Discounts";
+            // 
+            // SeniorCitizenCheckBox
+            // 
+            SeniorCitizenCheckBox.AutoSize = true;
+            SeniorCitizenCheckBox.Location = new Point(6, 76);
+            SeniorCitizenCheckBox.Name = "SeniorCitizenCheckBox";
+            SeniorCitizenCheckBox.Size = new Size(184, 24);
+            SeniorCitizenCheckBox.TabIndex = 1;
+            SeniorCitizenCheckBox.Text = "Senior Citizen Discount";
+            SeniorCitizenCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // AAAMemberCheckBox
+            // 
+            AAAMemberCheckBox.AutoSize = true;
+            AAAMemberCheckBox.Location = new Point(6, 37);
+            AAAMemberCheckBox.Name = "AAAMemberCheckBox";
+            AAAMemberCheckBox.Size = new Size(183, 24);
+            AAAMemberCheckBox.TabIndex = 0;
+            AAAMemberCheckBox.Text = "AAA Member Discount";
+            AAAMemberCheckBox.UseVisualStyleBackColor = true;
             // 
             // CalculateButton
             // 
@@ -296,14 +316,15 @@
             SumarryButton.Text = "Summary";
             SumarryButton.UseVisualStyleBackColor = true;
             // 
-            // SubmitButton
+            // ExitButton
             // 
-            SubmitButton.Location = new Point(531, 471);
-            SubmitButton.Name = "SubmitButton";
-            SubmitButton.Size = new Size(128, 42);
-            SubmitButton.TabIndex = 22;
-            SubmitButton.Text = "Submit";
-            SubmitButton.UseVisualStyleBackColor = true;
+            ExitButton.Location = new Point(531, 471);
+            ExitButton.Name = "ExitButton";
+            ExitButton.Size = new Size(128, 42);
+            ExitButton.TabIndex = 22;
+            ExitButton.Text = "Exit";
+            ExitButton.UseVisualStyleBackColor = true;
+            ExitButton.Click += ExitButton_Click;
             // 
             // CustomerSummaryGroupBox
             // 
@@ -324,61 +345,40 @@
             CustomerSummaryGroupBox.TabStop = false;
             CustomerSummaryGroupBox.Text = "Customer's Sumarry";
             // 
-            // AAAMemberCheckBox
+            // YouOweTextBox
             // 
-            AAAMemberCheckBox.AutoSize = true;
-            AAAMemberCheckBox.Location = new Point(6, 37);
-            AAAMemberCheckBox.Name = "AAAMemberCheckBox";
-            AAAMemberCheckBox.Size = new Size(183, 24);
-            AAAMemberCheckBox.TabIndex = 0;
-            AAAMemberCheckBox.Text = "AAA Member Discount";
-            AAAMemberCheckBox.UseVisualStyleBackColor = true;
+            YouOweTextBox.Location = new Point(180, 158);
+            YouOweTextBox.Name = "YouOweTextBox";
+            YouOweTextBox.Size = new Size(162, 27);
+            YouOweTextBox.TabIndex = 9;
             // 
-            // SeniorCitizenCheckBox
+            // MinusDiscountTextBox
             // 
-            SeniorCitizenCheckBox.AutoSize = true;
-            SeniorCitizenCheckBox.Location = new Point(6, 76);
-            SeniorCitizenCheckBox.Name = "SeniorCitizenCheckBox";
-            SeniorCitizenCheckBox.Size = new Size(184, 24);
-            SeniorCitizenCheckBox.TabIndex = 1;
-            SeniorCitizenCheckBox.Text = "Senior Citizen Discount";
-            SeniorCitizenCheckBox.UseVisualStyleBackColor = true;
+            MinusDiscountTextBox.Location = new Point(180, 126);
+            MinusDiscountTextBox.Name = "MinusDiscountTextBox";
+            MinusDiscountTextBox.Size = new Size(162, 27);
+            MinusDiscountTextBox.TabIndex = 8;
             // 
-            // DistanceDrivenLabel
+            // DayChargeTextBox
             // 
-            DistanceDrivenLabel.AutoSize = true;
-            DistanceDrivenLabel.Location = new Point(6, 32);
-            DistanceDrivenLabel.Name = "DistanceDrivenLabel";
-            DistanceDrivenLabel.Size = new Size(168, 20);
-            DistanceDrivenLabel.TabIndex = 0;
-            DistanceDrivenLabel.Text = "Distance Driven in Miles";
+            DayChargeTextBox.Location = new Point(180, 93);
+            DayChargeTextBox.Name = "DayChargeTextBox";
+            DayChargeTextBox.Size = new Size(162, 27);
+            DayChargeTextBox.TabIndex = 7;
             // 
-            // MilageChargeLabel
+            // MilageChargeTextBox
             // 
-            MilageChargeLabel.AutoSize = true;
-            MilageChargeLabel.Location = new Point(6, 65);
-            MilageChargeLabel.Name = "MilageChargeLabel";
-            MilageChargeLabel.Size = new Size(106, 20);
-            MilageChargeLabel.TabIndex = 1;
-            MilageChargeLabel.Text = "Milage Charge";
+            MilageChargeTextBox.Location = new Point(180, 62);
+            MilageChargeTextBox.Name = "MilageChargeTextBox";
+            MilageChargeTextBox.Size = new Size(162, 27);
+            MilageChargeTextBox.TabIndex = 6;
             // 
-            // DayChargeLabel
+            // DistanceDrivenTextBox
             // 
-            DayChargeLabel.AutoSize = true;
-            DayChargeLabel.Location = new Point(6, 96);
-            DayChargeLabel.Name = "DayChargeLabel";
-            DayChargeLabel.Size = new Size(86, 20);
-            DayChargeLabel.TabIndex = 2;
-            DayChargeLabel.Text = "Day Charge";
-            // 
-            // MinusDiscountLabel
-            // 
-            MinusDiscountLabel.AutoSize = true;
-            MinusDiscountLabel.Location = new Point(6, 129);
-            MinusDiscountLabel.Name = "MinusDiscountLabel";
-            MinusDiscountLabel.Size = new Size(110, 20);
-            MinusDiscountLabel.TabIndex = 3;
-            MinusDiscountLabel.Text = "Minus Discount";
+            DistanceDrivenTextBox.Location = new Point(180, 29);
+            DistanceDrivenTextBox.Name = "DistanceDrivenTextBox";
+            DistanceDrivenTextBox.Size = new Size(162, 27);
+            DistanceDrivenTextBox.TabIndex = 5;
             // 
             // YouOweLabel
             // 
@@ -389,40 +389,41 @@
             YouOweLabel.TabIndex = 4;
             YouOweLabel.Text = "You Owe";
             // 
-            // DistanceDrivenTextBox
+            // MinusDiscountLabel
             // 
-            DistanceDrivenTextBox.Location = new Point(180, 29);
-            DistanceDrivenTextBox.Name = "DistanceDrivenTextBox";
-            DistanceDrivenTextBox.Size = new Size(162, 27);
-            DistanceDrivenTextBox.TabIndex = 5;
+            MinusDiscountLabel.AutoSize = true;
+            MinusDiscountLabel.Location = new Point(6, 129);
+            MinusDiscountLabel.Name = "MinusDiscountLabel";
+            MinusDiscountLabel.Size = new Size(110, 20);
+            MinusDiscountLabel.TabIndex = 3;
+            MinusDiscountLabel.Text = "Minus Discount";
             // 
-            // MilageChargeTextBox
+            // DayChargeLabel
             // 
-            MilageChargeTextBox.Location = new Point(180, 62);
-            MilageChargeTextBox.Name = "MilageChargeTextBox";
-            MilageChargeTextBox.Size = new Size(162, 27);
-            MilageChargeTextBox.TabIndex = 6;
+            DayChargeLabel.AutoSize = true;
+            DayChargeLabel.Location = new Point(6, 96);
+            DayChargeLabel.Name = "DayChargeLabel";
+            DayChargeLabel.Size = new Size(86, 20);
+            DayChargeLabel.TabIndex = 2;
+            DayChargeLabel.Text = "Day Charge";
             // 
-            // DayChargeTextBox
+            // MilageChargeLabel
             // 
-            DayChargeTextBox.Location = new Point(180, 93);
-            DayChargeTextBox.Name = "DayChargeTextBox";
-            DayChargeTextBox.Size = new Size(162, 27);
-            DayChargeTextBox.TabIndex = 7;
+            MilageChargeLabel.AutoSize = true;
+            MilageChargeLabel.Location = new Point(6, 65);
+            MilageChargeLabel.Name = "MilageChargeLabel";
+            MilageChargeLabel.Size = new Size(106, 20);
+            MilageChargeLabel.TabIndex = 1;
+            MilageChargeLabel.Text = "Milage Charge";
             // 
-            // MinusDiscountTextBox
+            // DistanceDrivenLabel
             // 
-            MinusDiscountTextBox.Location = new Point(180, 126);
-            MinusDiscountTextBox.Name = "MinusDiscountTextBox";
-            MinusDiscountTextBox.Size = new Size(162, 27);
-            MinusDiscountTextBox.TabIndex = 8;
-            // 
-            // YouOweTextBox
-            // 
-            YouOweTextBox.Location = new Point(180, 158);
-            YouOweTextBox.Name = "YouOweTextBox";
-            YouOweTextBox.Size = new Size(162, 27);
-            YouOweTextBox.TabIndex = 9;
+            DistanceDrivenLabel.AutoSize = true;
+            DistanceDrivenLabel.Location = new Point(6, 32);
+            DistanceDrivenLabel.Name = "DistanceDrivenLabel";
+            DistanceDrivenLabel.Size = new Size(168, 20);
+            DistanceDrivenLabel.TabIndex = 0;
+            DistanceDrivenLabel.Text = "Distance Driven in Miles";
             // 
             // CarRental
             // 
@@ -430,7 +431,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 534);
             Controls.Add(CustomerSummaryGroupBox);
-            Controls.Add(SubmitButton);
+            Controls.Add(ExitButton);
             Controls.Add(SumarryButton);
             Controls.Add(ClearButton);
             Controls.Add(CalculateButton);
@@ -476,7 +477,7 @@
         private Button CalculateButton;
         private Button ClearButton;
         private Button SumarryButton;
-        private Button SubmitButton;
+        private Button ExitButton;
         private GroupBox CustomerSummaryGroupBox;
         private CheckBox SeniorCitizenCheckBox;
         private CheckBox AAAMemberCheckBox;
