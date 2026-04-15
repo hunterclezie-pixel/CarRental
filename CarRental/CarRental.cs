@@ -97,7 +97,7 @@ namespace CarRental
 
             try
             {
-                if (int.Parse(BeginningOdometerTextBox.Text) >= 0 && int.Parse(BeginningOdometerTextBox.Text) <= (int.Parse(EndingOdometerTextBox.Text)))
+                if (int.Parse(BeginningOdometerTextBox.Text) >= 0 && int.Parse(BeginningOdometerTextBox.Text) < (int.Parse(EndingOdometerTextBox.Text)))
                 {
                     BeginningOdometerTextBox.BackColor = Color.White;
                 }
@@ -115,7 +115,7 @@ namespace CarRental
 
             try
             {
-                if (int.Parse(EndingOdometerTextBox.Text) == 0)
+                if (int.Parse(EndingOdometerTextBox.Text) >= 0)
                 {
                     EndingOdometerTextBox.BackColor = Color.White;
                 }
@@ -133,19 +133,19 @@ namespace CarRental
 
             try
             {
-                if (int.Parse(NumberDaysTextBox.Text) >= 0 && int.Parse(NumberDaysTextBox.Text) <= 45)
+                if (int.Parse(NumberDaysTextBox.Text) >= 1 && int.Parse(NumberDaysTextBox.Text) <= 45)
                 {
-                    EndingOdometerTextBox.BackColor = Color.White;
+                    NumberDaysTextBox.BackColor = Color.White;
                 }
                 else
                 {
-                    EndingOdometerTextBox.BackColor = Color.LightYellow;
+                    NumberDaysTextBox.BackColor = Color.LightYellow;
                     valid = false;
                 }
             }
             catch (Exception)
             {
-                EndingOdometerTextBox.BackColor = Color.LightYellow;
+                NumberDaysTextBox.BackColor = Color.LightYellow;
                 valid = false;
             }
             return valid;
