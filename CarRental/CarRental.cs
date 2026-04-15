@@ -5,6 +5,8 @@ RCET2265
 CarRental
 github url: https://github.com/hunterclezie-pixel/CarRental.git
 */
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
 namespace CarRental
 {
     public partial class CarRental : Form
@@ -13,7 +15,6 @@ namespace CarRental
         {
             InitializeComponent();
             SetDefaults();
-            ValidateCalculateButton();
         }
 
         //Custom Methids below here --------------------------------------------------------------
@@ -43,7 +44,6 @@ namespace CarRental
         private bool ValidateFields()
         {
             bool valid = true;
-            string message = "";
 
             if (CustomerNameTextBox.Text != "")
             {
@@ -52,7 +52,6 @@ namespace CarRental
             else
             {
                 CustomerNameTextBox.BackColor = Color.LightYellow;
-                message += "Please enter a valid customer name.\n";
                 valid = false;
             }
 
@@ -63,7 +62,6 @@ namespace CarRental
             else
             {
                 AddressTextBox.BackColor = Color.LightYellow;
-                message += "Please enter a valid address.\n";
                 valid = false;
             }
 
@@ -74,7 +72,6 @@ namespace CarRental
             else
             {
                 CityTextBox.BackColor = Color.LightYellow;
-                message += "Please enter a valid city.\n";
                 valid = false;
             }
 
@@ -85,7 +82,6 @@ namespace CarRental
             else
             {
                 StateTextBox.BackColor = Color.LightYellow;
-                message += "Please enter a valid state.\n";
                 valid = false;
             }
 
@@ -96,7 +92,6 @@ namespace CarRental
             else
             {
                 ZipCodeTextBox.BackColor = Color.LightYellow;
-                message += "Please enter a valid zip code.\n";
                 valid = false;
             }
 
@@ -115,7 +110,6 @@ namespace CarRental
             catch (Exception)
             {
                 BeginningOdometerTextBox.BackColor = Color.LightYellow;
-                message += "Please enter a valid beginning odometer reading that is less than or equal to the ending odometer reading.\n";
                 valid = false;
             }
 
@@ -134,7 +128,6 @@ namespace CarRental
             catch (Exception)
             {
                 EndingOdometerTextBox.BackColor = Color.LightYellow;
-                message += "Please enter a valid ending odometer reading.\n";
                 valid = false;
             }
 
@@ -153,22 +146,77 @@ namespace CarRental
             catch (Exception)
             {
                 EndingOdometerTextBox.BackColor = Color.LightYellow;
-                message += "Please enter a valid number of days (0-45).\n";
                 valid = false;
+            }
+            return valid;
+        }
+
+        private bool ImproperInputMessages()
+        {
+            bool valid = true;
+            string message = "";
+            if (CustomerNameTextBox.Text == "")
+            {
+                message += "Please enter a valid customer name.\n";
+            }
+            if (AddressTextBox.Text == "")
+            {
+                message += "Please enter a valid address.\n";
+            }
+            if (CityTextBox.Text == "")
+            {
+                message += "Please enter a valid city.\n";
+            }
+            if (StateTextBox.Text == "")
+            {
+                message += "Please enter a valid state.\n";
+            }
+            if (ZipCodeTextBox.Text == "")
+            {
+                message += "Please enter a valid zip code.\n";
+            }
+            try
+            {
+                if (int.Parse(BeginningOdometerTextBox.Text) < 0 || int.Parse(BeginningOdometerTextBox.Text) > (int.Parse(EndingOdometerTextBox.Text)))
+                {
+                    message += "Please enter a valid beginning odometer reading that is less than or equal to the ending odometer reading.\n";
+                }
+            }
+            catch (Exception)
+            {
+                message += "Please enter a valid beginning odometer reading that is less than or equal to the ending odometer reading.\n";
+            }
+            try
+            {
+
+                if (int.Parse(EndingOdometerTextBox.Text) < 0)
+                {
+                    message += "Please enter a valid ending odometer reading.\n";
+                }
+
+            }
+            catch (Exception)
+            {
+                message += "Please enter a valid ending odometer reading.\n";
+            }
+            try
+            {
+                if (int.Parse(NumberDaysTextBox.Text) < 0 || int.Parse(NumberDaysTextBox.Text) > 45)
+                {
+                    message += "Please enter a valid number of days (0-45).\n";
+                }
+            }
+            catch (Exception)
+            {
+                message += "Please enter a valid number of days (0-45).\n";
             }
 
             if (message != "")
             {
-                valid = false;
                 MessageBox.Show(message);
             }
 
             return valid;
-        }
-
-        void ValidateCalculateButton()
-        {
-            
         }
 
         private double KilometersToMiles(double kilometers)
@@ -197,6 +245,53 @@ namespace CarRental
         }
 
         private void CalculateButton_Click(object sender, EventArgs e)
+        {
+            ImproperInputMessages();
+        }
+
+        private void SummaryButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //Text Changed Event Handlers below here --------------------------------------------------------------
+
+        private void CustomerNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            ValidateFields();
+        }
+
+        private void AddressTextBox_TextChanged(object sender, EventArgs e)
+        {
+            ValidateFields();
+        }
+
+        private void CityTextBox_TextChanged(object sender, EventArgs e)
+        {
+            ValidateFields();
+        }
+
+        private void StateTextBox_TextChanged(object sender, EventArgs e)
+        {
+            ValidateFields();
+        }
+
+        private void ZipCodeTextBox_TextChanged(object sender, EventArgs e)
+        {
+            ValidateFields();
+        }
+
+        private void BeginningOdometerTextBox_TextChanged(object sender, EventArgs e)
+        {
+            ValidateFields();
+        }
+
+        private void EndingOdometerTextBox_TextChanged(object sender, EventArgs e)
+        {
+            ValidateFields();
+        }
+
+        private void NumberDaysTextBox_TextChanged(object sender, EventArgs e)
         {
             ValidateFields();
         }

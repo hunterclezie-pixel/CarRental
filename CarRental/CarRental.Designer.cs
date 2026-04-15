@@ -150,6 +150,7 @@
             CustomerNameTextBox.Name = "CustomerNameTextBox";
             CustomerNameTextBox.Size = new Size(168, 27);
             CustomerNameTextBox.TabIndex = 8;
+            CustomerNameTextBox.TextChanged += CustomerNameTextBox_TextChanged;
             // 
             // AddressTextBox
             // 
@@ -157,6 +158,7 @@
             AddressTextBox.Name = "AddressTextBox";
             AddressTextBox.Size = new Size(168, 27);
             AddressTextBox.TabIndex = 9;
+            AddressTextBox.TextChanged += AddressTextBox_TextChanged;
             // 
             // CityTextBox
             // 
@@ -164,6 +166,7 @@
             CityTextBox.Name = "CityTextBox";
             CityTextBox.Size = new Size(168, 27);
             CityTextBox.TabIndex = 10;
+            CityTextBox.TextChanged += CityTextBox_TextChanged;
             // 
             // StateTextBox
             // 
@@ -171,6 +174,7 @@
             StateTextBox.Name = "StateTextBox";
             StateTextBox.Size = new Size(168, 27);
             StateTextBox.TabIndex = 11;
+            StateTextBox.TextChanged += StateTextBox_TextChanged;
             // 
             // ZipCodeTextBox
             // 
@@ -178,6 +182,7 @@
             ZipCodeTextBox.Name = "ZipCodeTextBox";
             ZipCodeTextBox.Size = new Size(168, 27);
             ZipCodeTextBox.TabIndex = 12;
+            ZipCodeTextBox.TextChanged += ZipCodeTextBox_TextChanged;
             // 
             // BeginningOdometerTextBox
             // 
@@ -185,6 +190,7 @@
             BeginningOdometerTextBox.Name = "BeginningOdometerTextBox";
             BeginningOdometerTextBox.Size = new Size(168, 27);
             BeginningOdometerTextBox.TabIndex = 13;
+            BeginningOdometerTextBox.TextChanged += BeginningOdometerTextBox_TextChanged;
             // 
             // EndingOdometerTextBox
             // 
@@ -192,6 +198,7 @@
             EndingOdometerTextBox.Name = "EndingOdometerTextBox";
             EndingOdometerTextBox.Size = new Size(168, 27);
             EndingOdometerTextBox.TabIndex = 14;
+            EndingOdometerTextBox.TextChanged += EndingOdometerTextBox_TextChanged;
             // 
             // NumberDaysTextBox
             // 
@@ -199,6 +206,7 @@
             NumberDaysTextBox.Name = "NumberDaysTextBox";
             NumberDaysTextBox.Size = new Size(168, 27);
             NumberDaysTextBox.TabIndex = 15;
+            NumberDaysTextBox.TextChanged += NumberDaysTextBox_TextChanged;
             // 
             // CustomerInfoGroupBox
             // 
@@ -317,6 +325,7 @@
             SummaryButton.TabIndex = 21;
             SummaryButton.Text = "Summary";
             SummaryButton.UseVisualStyleBackColor = true;
+            SummaryButton.Click += SummaryButton_Click;
             // 
             // ExitButton
             // 
