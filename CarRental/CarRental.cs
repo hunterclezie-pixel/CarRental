@@ -239,6 +239,13 @@ namespace CarRental
             return discount;
         }
 
+        private int CalculateMilesDriven(int milesDriven)
+        {
+            milesDriven = int.Parse(EndingOdometerTextBox.Text) - int.Parse(BeginningOdometerTextBox.Text);
+            DistanceDrivenTextBox.Text = milesDriven.ToString();    
+            return milesDriven;
+        }
+
         private double KilometersToMiles(double kilometers)
         {
             return kilometers * 0.62;
