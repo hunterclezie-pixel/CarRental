@@ -39,6 +39,8 @@ namespace CarRental
             NumberDaysTextBox.BackColor = Color.LightYellow;
             SummaryButton.Enabled = false;
             MilesRadioButton.Checked = true;
+            AAAMemberCheckBox.Checked = false;
+            SeniorCitizenCheckBox.Checked = false;
         }
 
         private bool ValidateFields()
