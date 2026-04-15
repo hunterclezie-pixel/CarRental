@@ -229,6 +229,16 @@ namespace CarRental
             return discount;
         }
 
+        decimal CalculateSeniorDiscount(decimal thisAmount)
+        {
+            decimal discount = 0;
+            if (SeniorCitizenCheckBox.Checked)
+            {
+                discount = thisAmount * 0.3m;
+            }
+            return discount;
+        }
+
         private double KilometersToMiles(double kilometers)
         {
             return kilometers * 0.62;
