@@ -17,6 +17,10 @@ namespace CarRental
             SetDefaults();
         }
 
+        int customerNumberTotal = 0;
+        int milesDrivenTotal = 0;
+        decimal totalCharges = 0;
+
         //Custom Methids below here --------------------------------------------------------------
 
         void SetDefaults()
@@ -323,6 +327,7 @@ namespace CarRental
 
         private void CalculateButton_Click(object sender, EventArgs e)
         {
+            customerNumberTotal ++;
             if (ValidateFields())
             {
                 TransactionCalculation();
@@ -336,7 +341,12 @@ namespace CarRental
 
         private void SummaryButton_Click(object sender, EventArgs e)
         {
-
+            milesDrivenTotal = milesDrivenTotal + int.Parse(DistanceDrivenTextBox.Text);
+            totalCharges = totalCharges + decimal.Parse(YouOweTextBox.Text);
+            MessageBox.Show($"Total Customer:   {customerNumberTotal}" + "\n" +
+                            $"Total Miles:      {milesDrivenTotal}" + "\n" +
+                            $"Total Charges:    {totalCharges}");
+            SetDefaults();
         }
 
         //Text Changed Event Handlers below here --------------------------------------------------------------
