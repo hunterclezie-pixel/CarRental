@@ -226,7 +226,7 @@ namespace CarRental
             decimal discount = 0;
             if (AAAMemberCheckBox.Checked)
             {
-                discount = thisAmount * 0.5m;
+                discount = thisAmount * 0.05m;
             }
             return discount;
         }
@@ -236,7 +236,7 @@ namespace CarRental
             decimal discount = 0;
             if (SeniorCitizenCheckBox.Checked)
             {
-                discount = thisAmount * 0.3m;
+                discount = thisAmount * 0.03m;
             }
             return discount;
         }
@@ -282,6 +282,25 @@ namespace CarRental
             return dayCharge;
         }
 
+        void TransactionCalculation()
+        {
+            decimal originalAmount = 0;
+            decimal milesDriven = 0;
+            decimal milageCharge = 0;
+            decimal dayCharge = 0;
+            decimal totalDiscount = 0;
+            decimal amountDue = 0;
+
+            CalculateMilesDriven(milesDriven);
+            milageCharge = CalculateMilageCharge(originalAmount);
+            dayCharge = CalculateDayCharge(originalAmount + milageCharge);
+            totalDiscount += CalculateAAADiscount(originalAmount + milageCharge + dayCharge);
+            totalDiscount += CalculateSeniorDiscount(originalAmount + milageCharge + dayCharge);
+            MinusDiscountTextBox.Text = totalDiscount.ToString();
+            amountDue = (originalAmount + milageCharge + dayCharge) - totalDiscount;
+            YouOweTextBox.Text = amountDue.ToString();
+        }
+
         //Event Handlers below here --------------------------------------------------------------
 
         private void ExitButton_Click(object sender, EventArgs e)
@@ -304,7 +323,15 @@ namespace CarRental
 
         private void CalculateButton_Click(object sender, EventArgs e)
         {
-            ImproperInputMessages();
+            if (ValidateFields())
+            {
+                TransactionCalculation();
+                SummaryButton.Enabled = true;
+            }
+            else
+            { 
+                ImproperInputMessages();
+            } 
         }
 
         private void SummaryButton_Click(object sender, EventArgs e)
