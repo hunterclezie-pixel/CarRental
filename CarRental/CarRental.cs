@@ -243,8 +243,15 @@ namespace CarRental
 
         private decimal CalculateMilesDriven(decimal milesDriven)
         {
-            milesDriven = decimal.Parse(EndingOdometerTextBox.Text) - decimal.Parse(BeginningOdometerTextBox.Text);
-            DistanceDrivenTextBox.Text = milesDriven.ToString();    
+            if (KilometersRadioButton.Checked)
+            {
+                milesDriven = (decimal.Parse(EndingOdometerTextBox.Text) - decimal.Parse(BeginningOdometerTextBox.Text)) * 0.62m;
+            }
+            else if (MilesRadioButton.Checked)
+            {
+                milesDriven = decimal.Parse(EndingOdometerTextBox.Text) - decimal.Parse(BeginningOdometerTextBox.Text);
+            }
+            DistanceDrivenTextBox.Text = milesDriven.ToString();
             return milesDriven;
         }
 
@@ -273,11 +280,6 @@ namespace CarRental
             dayCharge = decimal.Parse(NumberDaysTextBox.Text) * 15.00m;
             DayChargeTextBox.Text = dayCharge.ToString();
             return dayCharge;
-        }
-
-        private double KilometersToMiles(double kilometers)
-        {
-            return kilometers * 0.62;
         }
 
         //Event Handlers below here --------------------------------------------------------------
