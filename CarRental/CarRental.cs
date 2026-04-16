@@ -244,8 +244,28 @@ namespace CarRental
         private int CalculateMilesDriven(int milesDriven)
         {
             milesDriven = int.Parse(EndingOdometerTextBox.Text) - int.Parse(BeginningOdometerTextBox.Text);
-            DistanceDrivenTextBox.Text = milesDriven.ToString();    
+            DistanceDrivenTextBox.Text = decimal.Parse(DistanceDrivenTextBox.Text).ToString();    
             return milesDriven;
+        }
+
+        private decimal CalculateMilageCharge(decimal milageCharge)
+        {
+            if (decimal.Parse(DistanceDrivenTextBox.Text) <= 200)
+            { 
+                milageCharge = 0.00m;
+                MilageChargeTextBox.Text = milageCharge.ToString();
+            }
+            if (decimal.Parse(DistanceDrivenTextBox.Text) >= 200 && decimal.Parse(DistanceDrivenTextBox.Text) >= 500)
+            { 
+                milageCharge = decimal.Parse(DistanceDrivenTextBox.Text) * 0.12m;
+                MilageChargeTextBox.Text = milageCharge.ToString();
+            }
+            if (decimal.Parse(DistanceDrivenTextBox.Text) >= 501)
+            {
+                milageCharge = decimal.Parse(DistanceDrivenTextBox.Text) * 0.10m;
+                MilageChargeTextBox.Text = milageCharge.ToString();
+            }
+            return milageCharge;
         }
 
         private double KilometersToMiles(double kilometers)
