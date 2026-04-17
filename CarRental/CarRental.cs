@@ -280,17 +280,17 @@ namespace CarRental
             if (decimal.Parse(DistanceDrivenTextBox.Text) <= 200)
             { 
                 milageCharge = 0.00m;
-                MilageChargeTextBox.Text = milageCharge.ToString();
+                MilageChargeTextBox.Text = $"{milageCharge.ToString():C}";
             }
             if (decimal.Parse(DistanceDrivenTextBox.Text) >= 200 && decimal.Parse(DistanceDrivenTextBox.Text) >= 500)
             { 
                 milageCharge = decimal.Parse(DistanceDrivenTextBox.Text) * 0.12m;
-                MilageChargeTextBox.Text = milageCharge.ToString();
+                MilageChargeTextBox.Text = $"{milageCharge.ToString():C}";
             }
             if (decimal.Parse(DistanceDrivenTextBox.Text) >= 501)
             {
                 milageCharge = decimal.Parse(DistanceDrivenTextBox.Text) * 0.10m;
-                MilageChargeTextBox.Text = milageCharge.ToString();
+                MilageChargeTextBox.Text = $"{milageCharge.ToString():C}";
             }
             return milageCharge;
         }
@@ -298,7 +298,7 @@ namespace CarRental
         private decimal CalculateDayCharge(decimal dayCharge)
         {
             dayCharge = decimal.Parse(NumberDaysTextBox.Text) * 15.00m;
-            DayChargeTextBox.Text = dayCharge.ToString();
+            DayChargeTextBox.Text = $"{dayCharge.ToString():C}";
             return dayCharge;
         }
 
@@ -316,9 +316,9 @@ namespace CarRental
             dayCharge = CalculateDayCharge(originalAmount + milageCharge);
             totalDiscount += CalculateAAADiscount(originalAmount + milageCharge + dayCharge);
             totalDiscount += CalculateSeniorDiscount(originalAmount + milageCharge + dayCharge);
-            MinusDiscountTextBox.Text = totalDiscount.ToString();
+            MinusDiscountTextBox.Text = $"{totalDiscount.ToString():C}";
             amountDue = (originalAmount + milageCharge + dayCharge) - totalDiscount;
-            YouOweTextBox.Text = amountDue.ToString();
+            YouOweTextBox.Text = $"{amountDue.ToString():C}";
         }
 
         //Event Handlers below here --------------------------------------------------------------
@@ -359,8 +359,8 @@ namespace CarRental
             milesDrivenTotal = milesDrivenTotal + decimal.Parse(DistanceDrivenTextBox.Text);
             totalCharges = totalCharges + decimal.Parse(YouOweTextBox.Text);
             MessageBox.Show($"Total Customer:   {customerNumberTotal}" + "\n" +
-                            $"Total Miles:      {milesDrivenTotal}" + "\n" +
-                            $"Total Charges:    {totalCharges}");
+                            $"Total Miles:      {milesDrivenTotal}mi" + "\n" +
+                            $"Total Charges:    ${totalCharges}");
             SetDefaults();
         }
 
