@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             CustomerNameLabel = new Label();
             AddressLabel = new Label();
             CityLabel = new Label();
@@ -66,6 +67,7 @@
             DayChargeLabel = new Label();
             MilageChargeLabel = new Label();
             DistanceDrivenLabel = new Label();
+            MaimToolTip = new ToolTip(components);
             CustomerInfoGroupBox.SuspendLayout();
             DistanceConversionGroupBox.SuspendLayout();
             DiscountGroupBox.SuspendLayout();
@@ -80,6 +82,7 @@
             CustomerNameLabel.Size = new Size(125, 20);
             CustomerNameLabel.TabIndex = 0;
             CustomerNameLabel.Text = "Customer's Name";
+            MaimToolTip.SetToolTip(CustomerNameLabel, "The Customer's Name");
             // 
             // AddressLabel
             // 
@@ -89,6 +92,7 @@
             AddressLabel.Size = new Size(62, 20);
             AddressLabel.TabIndex = 1;
             AddressLabel.Text = "Address";
+            MaimToolTip.SetToolTip(AddressLabel, "The Customer's Address");
             // 
             // CityLabel
             // 
@@ -98,6 +102,7 @@
             CityLabel.Size = new Size(34, 20);
             CityLabel.TabIndex = 2;
             CityLabel.Text = "City";
+            MaimToolTip.SetToolTip(CityLabel, "The Customer's City");
             // 
             // StateLabel
             // 
@@ -107,6 +112,7 @@
             StateLabel.Size = new Size(43, 20);
             StateLabel.TabIndex = 3;
             StateLabel.Text = "State";
+            MaimToolTip.SetToolTip(StateLabel, "The Customer's State");
             // 
             // ZipCodeLabel
             // 
@@ -116,6 +122,7 @@
             ZipCodeLabel.Size = new Size(70, 20);
             ZipCodeLabel.TabIndex = 4;
             ZipCodeLabel.Text = "Zip Code";
+            MaimToolTip.SetToolTip(ZipCodeLabel, "The Customer's Zip Code");
             // 
             // BeginningOdometerLabel
             // 
@@ -125,6 +132,7 @@
             BeginningOdometerLabel.Size = new Size(207, 20);
             BeginningOdometerLabel.TabIndex = 5;
             BeginningOdometerLabel.Text = "Beginning Odometer Reading";
+            MaimToolTip.SetToolTip(BeginningOdometerLabel, "The Odometer before being rented");
             // 
             // EndingOdometerlabel
             // 
@@ -134,6 +142,7 @@
             EndingOdometerlabel.Size = new Size(186, 20);
             EndingOdometerlabel.TabIndex = 6;
             EndingOdometerlabel.Text = "Ending Odometer Reading";
+            MaimToolTip.SetToolTip(EndingOdometerlabel, "The Odometer after being rented");
             // 
             // NumberDaysLabel
             // 
@@ -143,6 +152,7 @@
             NumberDaysLabel.Size = new Size(117, 20);
             NumberDaysLabel.TabIndex = 7;
             NumberDaysLabel.Text = "Number of Days";
+            MaimToolTip.SetToolTip(NumberDaysLabel, "Number of days rented");
             // 
             // CustomerNameTextBox
             // 
@@ -253,6 +263,7 @@
             KilometersRadioButton.TabIndex = 1;
             KilometersRadioButton.TabStop = true;
             KilometersRadioButton.Text = "Kilometers";
+            MaimToolTip.SetToolTip(KilometersRadioButton, "Converts to miles");
             KilometersRadioButton.UseVisualStyleBackColor = true;
             // 
             // MilesRadioButton
@@ -264,6 +275,7 @@
             MilesRadioButton.TabIndex = 0;
             MilesRadioButton.TabStop = true;
             MilesRadioButton.Text = "Miles";
+            MaimToolTip.SetToolTip(MilesRadioButton, "Standard unit");
             MilesRadioButton.UseVisualStyleBackColor = true;
             // 
             // DiscountGroupBox
@@ -285,6 +297,7 @@
             SeniorCitizenCheckBox.Size = new Size(184, 24);
             SeniorCitizenCheckBox.TabIndex = 1;
             SeniorCitizenCheckBox.Text = "Senior Citizen Discount";
+            MaimToolTip.SetToolTip(SeniorCitizenCheckBox, "3% Discount for Senior Citizens");
             SeniorCitizenCheckBox.UseVisualStyleBackColor = true;
             // 
             // AAAMemberCheckBox
@@ -295,45 +308,50 @@
             AAAMemberCheckBox.Size = new Size(183, 24);
             AAAMemberCheckBox.TabIndex = 0;
             AAAMemberCheckBox.Text = "AAA Member Discount";
+            MaimToolTip.SetToolTip(AAAMemberCheckBox, "5% Discount for AAA Members");
             AAAMemberCheckBox.UseVisualStyleBackColor = true;
             // 
             // CalculateButton
             // 
-            CalculateButton.Location = new Point(129, 471);
+            CalculateButton.Location = new Point(126, 467);
             CalculateButton.Name = "CalculateButton";
             CalculateButton.Size = new Size(128, 42);
             CalculateButton.TabIndex = 19;
             CalculateButton.Text = "Calculate";
+            MaimToolTip.SetToolTip(CalculateButton, "Calculates charge");
             CalculateButton.UseVisualStyleBackColor = true;
             CalculateButton.Click += CalculateButton_Click;
             // 
             // ClearButton
             // 
-            ClearButton.Location = new Point(263, 471);
+            ClearButton.Location = new Point(260, 467);
             ClearButton.Name = "ClearButton";
             ClearButton.Size = new Size(128, 42);
             ClearButton.TabIndex = 20;
             ClearButton.Text = "Clear";
+            MaimToolTip.SetToolTip(ClearButton, "clears customer information");
             ClearButton.UseVisualStyleBackColor = true;
             ClearButton.Click += ClearButton_Click;
             // 
             // SummaryButton
             // 
-            SummaryButton.Location = new Point(397, 471);
+            SummaryButton.Location = new Point(394, 467);
             SummaryButton.Name = "SummaryButton";
             SummaryButton.Size = new Size(128, 42);
             SummaryButton.TabIndex = 21;
             SummaryButton.Text = "Summary";
+            MaimToolTip.SetToolTip(SummaryButton, "Summary to display all totals");
             SummaryButton.UseVisualStyleBackColor = true;
             SummaryButton.Click += SummaryButton_Click;
             // 
             // ExitButton
             // 
-            ExitButton.Location = new Point(531, 471);
+            ExitButton.Location = new Point(528, 467);
             ExitButton.Name = "ExitButton";
             ExitButton.Size = new Size(128, 42);
             ExitButton.TabIndex = 22;
             ExitButton.Text = "Exit";
+            MaimToolTip.SetToolTip(ExitButton, "Exits program");
             ExitButton.UseVisualStyleBackColor = true;
             ExitButton.Click += ExitButton_Click;
             // 
@@ -399,6 +417,7 @@
             YouOweLabel.Size = new Size(67, 20);
             YouOweLabel.TabIndex = 4;
             YouOweLabel.Text = "You Owe";
+            MaimToolTip.SetToolTip(YouOweLabel, "final pricing");
             // 
             // MinusDiscountLabel
             // 
@@ -408,6 +427,7 @@
             MinusDiscountLabel.Size = new Size(110, 20);
             MinusDiscountLabel.TabIndex = 3;
             MinusDiscountLabel.Text = "Minus Discount";
+            MaimToolTip.SetToolTip(MinusDiscountLabel, "subtracts the discount");
             // 
             // DayChargeLabel
             // 
@@ -417,6 +437,7 @@
             DayChargeLabel.Size = new Size(86, 20);
             DayChargeLabel.TabIndex = 2;
             DayChargeLabel.Text = "Day Charge";
+            MaimToolTip.SetToolTip(DayChargeLabel, "amount charged for days rented");
             // 
             // MilageChargeLabel
             // 
@@ -426,6 +447,7 @@
             MilageChargeLabel.Size = new Size(106, 20);
             MilageChargeLabel.TabIndex = 1;
             MilageChargeLabel.Text = "Milage Charge";
+            MaimToolTip.SetToolTip(MilageChargeLabel, "amount charged for milage");
             // 
             // DistanceDrivenLabel
             // 
@@ -435,12 +457,13 @@
             DistanceDrivenLabel.Size = new Size(168, 20);
             DistanceDrivenLabel.TabIndex = 0;
             DistanceDrivenLabel.Text = "Distance Driven in Miles";
+            MaimToolTip.SetToolTip(DistanceDrivenLabel, "The distance the customer drove");
             // 
             // CarRental
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 534);
+            ClientSize = new Size(800, 521);
             Controls.Add(CustomerSummaryGroupBox);
             Controls.Add(ExitButton);
             Controls.Add(SummaryButton);
@@ -502,5 +525,6 @@
         private TextBox MilageChargeTextBox;
         private TextBox DistanceDrivenTextBox;
         private Label YouOweLabel;
+        private ToolTip MaimToolTip;
     }
 }

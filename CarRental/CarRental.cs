@@ -5,6 +5,7 @@ RCET2265
 CarRental
 github url: https://github.com/hunterclezie-pixel/CarRental.git
 */
+using System.Diagnostics.Eventing.Reader;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CarRental
@@ -18,7 +19,7 @@ namespace CarRental
         }
 
         int customerNumberTotal = 0;
-        int milesDrivenTotal = 0;
+        decimal milesDrivenTotal = 0;
         decimal totalCharges = 0;
 
         //Custom Methids below here --------------------------------------------------------------
@@ -45,6 +46,21 @@ namespace CarRental
             MilesRadioButton.Checked = true;
             AAAMemberCheckBox.Checked = false;
             SeniorCitizenCheckBox.Checked = false;
+            DistanceDrivenTextBox.Text = "";
+            DistanceDrivenTextBox.Enabled = false;
+            MilageChargeTextBox.Text = "";
+            MilageChargeTextBox.Enabled = false;
+            DayChargeTextBox.Text = "";
+            DayChargeTextBox.Enabled = false;
+            MinusDiscountTextBox.Text = "";
+            MinusDiscountTextBox.Enabled = false;
+            YouOweTextBox.Text = "";
+            YouOweTextBox.Enabled = false;
+
+            if (customerNumberTotal >= 1);
+            {
+                SummaryButton.Enabled = true;
+            }
         }
 
         private bool ValidateFields()
@@ -331,7 +347,6 @@ namespace CarRental
             if (ValidateFields())
             {
                 TransactionCalculation();
-                SummaryButton.Enabled = true;
             }
             else
             { 
@@ -341,7 +356,7 @@ namespace CarRental
 
         private void SummaryButton_Click(object sender, EventArgs e)
         {
-            milesDrivenTotal = milesDrivenTotal + int.Parse(DistanceDrivenTextBox.Text);
+            milesDrivenTotal = milesDrivenTotal + decimal.Parse(DistanceDrivenTextBox.Text);
             totalCharges = totalCharges + decimal.Parse(YouOweTextBox.Text);
             MessageBox.Show($"Total Customer:   {customerNumberTotal}" + "\n" +
                             $"Total Miles:      {milesDrivenTotal}" + "\n" +
