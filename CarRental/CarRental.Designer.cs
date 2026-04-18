@@ -376,37 +376,37 @@
             // 
             // YouOweTextBox
             // 
-            YouOweTextBox.Location = new Point(180, 158);
+            YouOweTextBox.Location = new Point(156, 158);
             YouOweTextBox.Name = "YouOweTextBox";
-            YouOweTextBox.Size = new Size(162, 27);
+            YouOweTextBox.Size = new Size(186, 27);
             YouOweTextBox.TabIndex = 9;
             // 
             // MinusDiscountTextBox
             // 
-            MinusDiscountTextBox.Location = new Point(180, 126);
+            MinusDiscountTextBox.Location = new Point(156, 126);
             MinusDiscountTextBox.Name = "MinusDiscountTextBox";
-            MinusDiscountTextBox.Size = new Size(162, 27);
+            MinusDiscountTextBox.Size = new Size(186, 27);
             MinusDiscountTextBox.TabIndex = 8;
             // 
             // DayChargeTextBox
             // 
-            DayChargeTextBox.Location = new Point(180, 93);
+            DayChargeTextBox.Location = new Point(156, 93);
             DayChargeTextBox.Name = "DayChargeTextBox";
-            DayChargeTextBox.Size = new Size(162, 27);
+            DayChargeTextBox.Size = new Size(186, 27);
             DayChargeTextBox.TabIndex = 7;
             // 
             // MilageChargeTextBox
             // 
-            MilageChargeTextBox.Location = new Point(180, 62);
+            MilageChargeTextBox.Location = new Point(156, 62);
             MilageChargeTextBox.Name = "MilageChargeTextBox";
-            MilageChargeTextBox.Size = new Size(162, 27);
+            MilageChargeTextBox.Size = new Size(186, 27);
             MilageChargeTextBox.TabIndex = 6;
             // 
             // DistanceDrivenTextBox
             // 
-            DistanceDrivenTextBox.Location = new Point(180, 29);
+            DistanceDrivenTextBox.Location = new Point(156, 29);
             DistanceDrivenTextBox.Name = "DistanceDrivenTextBox";
-            DistanceDrivenTextBox.Size = new Size(162, 27);
+            DistanceDrivenTextBox.Size = new Size(186, 27);
             DistanceDrivenTextBox.TabIndex = 5;
             // 
             // YouOweLabel
@@ -454,9 +454,9 @@
             DistanceDrivenLabel.AutoSize = true;
             DistanceDrivenLabel.Location = new Point(6, 32);
             DistanceDrivenLabel.Name = "DistanceDrivenLabel";
-            DistanceDrivenLabel.Size = new Size(168, 20);
+            DistanceDrivenLabel.Size = new Size(144, 20);
             DistanceDrivenLabel.TabIndex = 0;
-            DistanceDrivenLabel.Text = "Distance Driven in Miles";
+            DistanceDrivenLabel.Text = "Distance Driven (mi)";
             MaimToolTip.SetToolTip(DistanceDrivenLabel, "The distance the customer drove");
             // 
             // CarRental

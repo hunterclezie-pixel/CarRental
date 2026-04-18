@@ -18,6 +18,8 @@ namespace CarRental
             SetDefaults();
         }
 
+        // Global variables below here --------------------------------------------------------------
+
         int customerNumberTotal = 0;
         decimal milesDrivenTotal = 0;
         decimal totalCharges = 0;
@@ -26,6 +28,7 @@ namespace CarRental
 
         //Custom Methids below here --------------------------------------------------------------
 
+        // Sets the defaults for the form
         void SetDefaults()
         {
             CustomerNameTextBox.Text = "";
@@ -68,6 +71,7 @@ namespace CarRental
             amountDue = 0;
         }
 
+        // Validates each field, changing the colors to white when filled with the correct information 
         private bool ValidateFields()
         {
             bool valid = true;
@@ -178,6 +182,7 @@ namespace CarRental
             return valid;
         }
 
+        // Displays a message box when the incorrect information is in the customer boxes
         private bool ImproperInputMessages()
         {
             bool valid = true;
@@ -246,6 +251,7 @@ namespace CarRental
             return valid;
         }
 
+        // Calculates the 5% discount into the total price
         decimal CalculateAAADiscount(decimal thisAmount)
         {
             decimal discount = 0;
@@ -256,6 +262,7 @@ namespace CarRental
             return discount;
         }
 
+        // Calculates the 3% discount into the total price
         decimal CalculateSeniorDiscount(decimal thisAmount)
         {
             decimal discount = 0;
@@ -266,6 +273,7 @@ namespace CarRental
             return discount;
         }
 
+        // Calculates the miles driven and converts to miles if kilometers is selected
         private decimal CalculateMilesDriven(decimal milesDriven)
         {
             if (KilometersRadioButton.Checked)
@@ -281,6 +289,7 @@ namespace CarRental
             return milesDriven;
         }
 
+        // Calculates the mileage charge based on the miles driven
         private decimal CalculateMilageCharge(decimal milageCharge)
         {
             if (customerMiles <= 200)
@@ -288,7 +297,7 @@ namespace CarRental
                 milageCharge = 0.00m;
                 MilageChargeTextBox.Text = $"{milageCharge:C}";
             }
-            if (customerMiles >= 200 && customerMiles >= 500)
+            if (customerMiles >= 201 && customerMiles >= 500)
             { 
                 milageCharge = customerMiles * 0.12m;
                 MilageChargeTextBox.Text = $"{milageCharge:C}";
@@ -301,6 +310,7 @@ namespace CarRental
             return milageCharge;
         }
 
+        // Calculates the day charge based on the number of days rented
         private decimal CalculateDayCharge(decimal dayCharge)
         {
             dayCharge = decimal.Parse(NumberDaysTextBox.Text) * 15.00m;
@@ -308,6 +318,7 @@ namespace CarRental
             return dayCharge;
         }
 
+        // Calculates the total price of the rental, including discounts
         void TransactionCalculation()
         {
             decimal originalAmount = 0;
